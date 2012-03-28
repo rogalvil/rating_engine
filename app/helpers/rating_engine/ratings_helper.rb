@@ -10,8 +10,7 @@ module RatingEngine
     end
   
     def score_in_pixels(current_score)
-      max_length = RatingEngine.star_length * RatingEngine.max_score
-      ((current_score * max_length)/RatingEngine.max_score).round
+      (current_score * RatingEngine.star_length).round
     end
   
     def rating_url(rateable)
