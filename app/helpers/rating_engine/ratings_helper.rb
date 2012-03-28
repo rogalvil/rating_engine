@@ -10,7 +10,8 @@ module RatingEngine
     end
   
     def score_in_pixels(current_score)
-      ((current_score * 125.0)/RatingEngine.max_score).round
+      max_length = RatingEngine.star_length * RatingEngine.max_score
+      ((current_score * max_length)/RatingEngine.max_score).round
     end
   
     def rating_url(rateable)
@@ -19,6 +20,10 @@ module RatingEngine
       else
         eval("#{rateable.class.to_s.downcase}_ratings_path(#{rateable.id})")
       end
+    end
+
+    def star_left_padding(score)
+      score_in_pixels(score) - RatingEngine.star_length
     end
   end
 end

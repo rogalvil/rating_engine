@@ -5,7 +5,7 @@
 		<% if enabled %>
 			<% (RatingEngine.min_score..RatingEngine.max_score).each do |score| %>
 				<li>
-					<a href="#" title='<%= score %> stars out of <%= RatingEngine.max_score %>' style='left:<%= ((score) * 25) - 25%>px'>
+					<a href="#" title='<%= score %> stars out of <%= RatingEngine.max_score %>' style='left:<%= star_left_padding(score) %>px'>
 						<%= score %>
 					</a>
 				</li>

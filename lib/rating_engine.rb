@@ -12,6 +12,9 @@ module RatingEngine
   mattr_accessor  :min_score
   @@min_score = 1
     
+  mattr_accessor  :star_length
+  @@star_length = 25
+    
   def self.setup
     yield self
   end
